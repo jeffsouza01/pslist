@@ -14,16 +14,24 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/gamelist")
+@RequestMapping("/list")
 public class GameListController {
 
     @Autowired
     private GameListService gameListService;
 
+    @Autowired
+    private GameService gameService;
+
     @GetMapping
     public List<GameListDTO> showAllGames() {
 
         return gameListService.findAllGames();
+    }
+
+    @GetMapping(value = "/{listId}/games")
+    public List<GameMinDTO> findByList(@PathVariable Long listId) {
+        return gameService.findByList(listId);
     }
 
 

@@ -3,6 +3,7 @@ package com.porto.pslist.services;
 import com.porto.pslist.DTO.GameDTO;
 import com.porto.pslist.DTO.GameMinDTO;
 import com.porto.pslist.entities.Game;
+import com.porto.pslist.projections.GameMinProjection;
 import com.porto.pslist.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,13 @@ public class GameService {
     public GameDTO findGameById(Long id) {
         Game game = gameRepository.findById(id).get();
         return new GameDTO(game);
+    }
+
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> findByList(Long listId) {
+        List<GameMinProjection> allGames = gameRepository.searchByList(listId);
+        return allGames.stream().map(GameMinDTO::new).toList();
+
     }
 
 }
