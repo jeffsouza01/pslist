@@ -1,4 +1,4 @@
-package com.porto.pslist.entity;
+package com.porto.pslist.entities;
 
 import jakarta.persistence.*;
 
@@ -27,6 +27,7 @@ public class Game {
     private String longDescription;
 
     public Game() {
+
 
     }
 

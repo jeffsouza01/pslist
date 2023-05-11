@@ -1,7 +1,7 @@
 package com.porto.pslist.services;
 
 import com.porto.pslist.DTO.GameMinDTO;
-import com.porto.pslist.entity.Game;
+import com.porto.pslist.entities.Game;
 import com.porto.pslist.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

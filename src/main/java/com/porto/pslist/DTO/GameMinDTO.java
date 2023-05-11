@@ -1,6 +1,6 @@
 package com.porto.pslist.DTO;
 
-import com.porto.pslist.entity.Game;
+import com.porto.pslist.entities.Game;
 
 public class GameMinDTO {
 
