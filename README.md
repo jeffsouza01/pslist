@@ -1,9 +1,9 @@
-<h1> Projeto Catalogo de Jogos</h1>
+<h1> Projeto Coleções de Jogos</h1>
 
 
 <h2> :page_facing_up: Descrição do projeto </h2>
 <p align="justify">
-  Aplicação para listagem e controle de serviços e produtos com controle de usuário.
+  Aplicação para listagem e controle de coleções de jogos.
 </p>
 
 
