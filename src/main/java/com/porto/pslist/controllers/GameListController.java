@@ -3,13 +3,11 @@ package com.porto.pslist.controllers;
 import com.porto.pslist.DTO.GameDTO;
 import com.porto.pslist.DTO.GameListDTO;
 import com.porto.pslist.DTO.GameMinDTO;
+import com.porto.pslist.DTO.ReplacementDTO;
 import com.porto.pslist.services.GameListService;
 import com.porto.pslist.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -35,5 +33,9 @@ public class GameListController {
     }
 
 
+    @PostMapping(value = "/{listId}/replacement")
+    public void move(@PathVariable Long listId, @RequestBody ReplacementDTO data) {
+        gameListService.move(listId, data.sourceIndex(), data.destinationIndex());
+    }
 
 }
